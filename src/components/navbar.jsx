@@ -9,12 +9,12 @@ const Navbar = () => {
   return (
     <header className="bg-slate-900">
       <div className="container mx-auto flex h-16 w-full max-w-screen-xl items-center justify-between px-5 text-white">
-        <div className="text-3xl font-bold">LOGO</div>
+        <button className="text-3xl font-bold">LOGO</button>
 
         {status === "authenticated" ? (
           <button onClick={() => void signOut()}>{session.user.email}</button>
         ) : status === "loading" ? (
-          <button>Loading</button>
+          <button> Loading </button>
         ) : (
           <button
             className="flex items-center gap-2 rounded-lg bg-slate-700 px-6 py-1.5"
