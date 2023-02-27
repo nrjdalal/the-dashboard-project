@@ -13,7 +13,7 @@ const Navbar = () => {
 
         {status === "authenticated" ? (
           <div className="flex items-center gap-2">
-            {session.user.email}{" "}
+            {session.user.email?.split("@")[0]}{" "}
             <button onClick={() => void signOut()}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
