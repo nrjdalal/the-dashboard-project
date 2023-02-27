@@ -9,7 +9,9 @@ const Page = () => {
     void router.push("/dashboard");
   }
 
-  return <div>Home</div>;
+  return (
+    <div className="flex h-80 w-full items-center justify-center">Home</div>
+  );
 };
 
 export default Page;
