@@ -1,11 +1,9 @@
-import { useRouter } from "next/router";
-import { signIn, useSession } from "next-auth/react";
+/* eslint-disable @next/next/no-img-element */
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
-  const router = useRouter();
   const { data: session, status } = useSession();
 
-  console.log(router.pathname);
   console.log(status === "authenticated" && session);
 
   return (
@@ -14,10 +12,12 @@ const Navbar = () => {
         <div className="text-3xl font-bold">LOGO</div>
 
         {status === "authenticated" ? (
-          session.user.email
+          <button onClick={() => void signOut()}>{session.user.email}</button>
+        ) : status === "loading" ? (
+          <button>Loading</button>
         ) : (
           <button
-            className="rounded-xl bg-slate-800 px-5 py-1.5"
+            className="rounded-lg bg-slate-800 px-5 py-1.5"
             onClick={() => void signIn("google")}
           >
             Sign in
