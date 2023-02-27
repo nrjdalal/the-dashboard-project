@@ -17,9 +17,14 @@ const Navbar = () => {
           <button>Loading</button>
         ) : (
           <button
-            className="rounded-lg bg-slate-800 px-5 py-1.5"
+            className="flex items-center gap-2 rounded-lg bg-slate-700 px-6 py-1.5"
             onClick={() => void signIn("google")}
           >
+            <img
+              className="h-5 w-5"
+              src="https://cdn-icons-png.flaticon.com/128/300/300221.png"
+              alt="Sign in with Google"
+            />
             Sign in
           </button>
         )}
